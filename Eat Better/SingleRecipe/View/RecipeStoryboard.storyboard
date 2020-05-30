@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe View Controller-->
+        <scene sceneID="O7V-IB-gla">
+            <objects>
+                <viewController storyboardIdentifier="RecipeViewController" id="zWb-tA-yWz" customClass="RecipeViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoD-no-Zjd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayj-rZ-Lah">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3Sw-px-0EU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="667" id="yCh-sJ-0Bl"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3Sw-px-0EU" firstAttribute="top" secondItem="ayj-rZ-Lah" secondAttribute="top" id="6bb-8H-vkn"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Sw-px-0EU" secondAttribute="trailing" id="7VN-hY-WRw"/>
+                                    <constraint firstItem="3Sw-px-0EU" firstAttribute="leading" secondItem="ayj-rZ-Lah" secondAttribute="leading" id="WXx-wx-n1c"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Sw-px-0EU" secondAttribute="bottom" id="hgm-Pt-xdO"/>
+                                    <constraint firstItem="3Sw-px-0EU" firstAttribute="width" secondItem="ayj-rZ-Lah" secondAttribute="width" id="rTu-w0-wLz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="r7S-a7-lCL"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="hsJ-cU-sAw"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="bottom" secondItem="1V3-mk-fQf" secondAttribute="bottom" id="58K-w6-djy"/>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="trailing" secondItem="1V3-mk-fQf" secondAttribute="trailing" id="IoP-eg-kJd"/>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="leading" secondItem="1V3-mk-fQf" secondAttribute="leading" id="R47-6d-cAb"/>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="top" secondItem="1V3-mk-fQf" secondAttribute="top" id="YPQ-sT-iOS"/>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="height" secondItem="1V3-mk-fQf" secondAttribute="height" id="Z7d-js-sz6"/>
+                            <constraint firstItem="ayj-rZ-Lah" firstAttribute="width" secondItem="1V3-mk-fQf" secondAttribute="width" id="u05-D0-2bY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1V3-mk-fQf"/>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="3Sw-px-0EU" id="ABI-1g-wj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ziR-eT-yMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="63.418290854572717"/>
+        </scene>
+    </scenes>
+</document>

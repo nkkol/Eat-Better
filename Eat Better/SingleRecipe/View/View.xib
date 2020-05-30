@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecipeView" customModule="Eat_Better" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7dw-R2-Dav">
+                    <rect key="frame" x="62" y="0.0" width="250" height="282.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDD-dp-HgL">
+                    <rect key="frame" x="25" y="302.5" width="334" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-B0-d8c">
+                    <rect key="frame" x="25" y="333.5" width="334" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-2K-AAK">
+                    <rect key="frame" x="25" y="364.5" width="340" height="20.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Ingredients">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="v3j-2K-AAK" firstAttribute="top" secondItem="bmz-B0-d8c" secondAttribute="bottom" constant="10" id="0fB-4W-fIr"/>
+                <constraint firstItem="7dw-R2-Dav" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="62" id="0nh-0T-Z8Q"/>
+                <constraint firstItem="bmz-B0-d8c" firstAttribute="top" secondItem="GDD-dp-HgL" secondAttribute="bottom" constant="10" id="0sT-XK-VkC"/>
+                <constraint firstItem="GDD-dp-HgL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="5Ub-ga-fnm"/>
+                <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6QQ-CI-Ald"/>
+                <constraint firstItem="v3j-2K-AAK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="7JS-Dd-INd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="v3j-2K-AAK" secondAttribute="bottom" id="JCH-Z9-OHP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GDD-dp-HgL" secondAttribute="trailing" constant="16" id="KlS-SL-YFa"/>
+                <constraint firstItem="GDD-dp-HgL" firstAttribute="top" secondItem="7dw-R2-Dav" secondAttribute="bottom" constant="20" id="b3b-mE-0ch"/>
+                <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bR0-Hf-eWM"/>
+                <constraint firstItem="bmz-B0-d8c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="gBP-As-rca"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v3j-2K-AAK" secondAttribute="trailing" constant="10" id="l93-31-ZwO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7dw-R2-Dav" secondAttribute="trailing" constant="63" id="r09-Fy-cK9"/>
+                <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="tjU-td-LMz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bmz-B0-d8c" secondAttribute="trailing" constant="16" id="yaM-oS-aCy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="caloriesLabel" destination="bmz-B0-d8c" id="loH-yc-pvr"/>
+                <outlet property="imageView" destination="7dw-R2-Dav" id="UhC-Dn-vpr"/>
+                <outlet property="ingredientsLabel" destination="v3j-2K-AAK" id="IFE-mp-q6m"/>
+                <outlet property="weightLabel" destination="GDD-dp-HgL" id="xym-MG-NSf"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="242.42878560719643"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NutrientsView" customModule="Eat_Better" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="288"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bnB-DP-fsn">
+                    <rect key="frame" x="10" y="7" width="384" height="270"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="270" id="jFn-zO-sZY"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="13" minimumInteritemSpacing="10" id="ChP-WZ-dlq">
+                        <size key="itemSize" width="210" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="bnB-DP-fsn" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="DtC-ro-TUf"/>
+                <constraint firstItem="bnB-DP-fsn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="HL5-Tm-zaj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bnB-DP-fsn" secondAttribute="bottom" constant="11" id="YkD-CH-jbh"/>
+                <constraint firstItem="bnB-DP-fsn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ghw-yn-v2O"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="nutrientsCollectionView" destination="bnB-DP-fsn" id="DUg-qP-s8Q"/>
+            </connections>
+            <point key="canvasLocation" x="118.84057971014494" y="22.767857142857142"/>
+        </view>
+    </objects>
+</document>
