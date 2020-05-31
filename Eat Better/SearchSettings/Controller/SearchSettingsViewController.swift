@@ -82,7 +82,6 @@ extension SearchSettingsViewController: UITableViewDelegate, UITableViewDataSour
             cell?.textLabel?.text =  SearchSettingsDataManager.sortedHealthLabelsDetails()[indexPath.row].key
             cell?.detailTextLabel?.text = SearchSettingsDataManager.sortedHealthLabelsDetails()[indexPath.row].value
             if SearchSettingsDataManager.selectedHealthLabels[cell?.textLabel?.text ?? ""] == true {
-                print(cell?.textLabel?.text ?? "none")
                 tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
         }
@@ -93,7 +92,6 @@ extension SearchSettingsViewController: UITableViewDelegate, UITableViewDataSour
                 tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
         }
-    
         return cell ?? UITableViewCell()
     }
     
@@ -106,14 +104,12 @@ extension SearchSettingsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func selectDeselect (_ flag: Bool, _ tableView : UITableView, _ indexPath: IndexPath) {
-        //force
-        let cell = tableView.cellForRow(at: indexPath)!
+        let cell = tableView.cellForRow(at: indexPath)
         if tableView.tag == 0 {
-            SearchSettingsDataManager.selectedHealthLabels[cell.textLabel?.text ?? ""] = flag
-            print(SearchSettingsDataManager.selectedHealthLabels)
+            SearchSettingsDataManager.selectedHealthLabels[cell?.textLabel?.text ?? ""] = flag
         }
         else {
-            SearchSettingsDataManager.selectedDietLabels[cell.textLabel?.text ?? ""] = flag
+            SearchSettingsDataManager.selectedDietLabels[cell?.textLabel?.text ?? ""] = flag
         }
     }
 }

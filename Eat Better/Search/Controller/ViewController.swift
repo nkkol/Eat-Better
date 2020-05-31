@@ -12,8 +12,8 @@ import ANActivityIndicator
 class ViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
-    @IBOutlet weak var ingredientsTextView: UITextView!
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
+    @IBOutlet weak var ingredientsTextField: UITextField!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var apiClient = ApiClient()
     var recipes = [Recipe]()
@@ -23,8 +23,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  //      self.navigationController?.title = "Your Title"
-
         resultTableView.delegate = self
         resultTableView.dataSource = self
  
@@ -32,11 +30,10 @@ class ViewController: UIViewController {
     
         prepareForLoading()
         setDoneButton()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.tabBarController?.title = "Recipe search"
+        tabBarController?.title = "Recipe search"
     }
 
     func prepareForLoading() {
@@ -60,7 +57,7 @@ class ViewController: UIViewController {
     }
 
     func getSearchResults () {
-        let url = NetworkManager.prepareForSearch(ingredientsTextView.text)
+        let url = NetworkManager.prepareForSearch(ingredientsTextField.text ?? "")
         NetworkManager.searchRecipes (urlString: url) { data in
             self.apiClient.fetchRecipes(data) { recipesArray in
                 self.recipes = recipesArray
@@ -100,11 +97,11 @@ class ViewController: UIViewController {
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(done))
         toolbar.setItems([flexibleSpace, doneButton], animated: false)
         toolbar.sizeToFit()
-        ingredientsTextView.inputAccessoryView = toolbar
+        ingredientsTextField.inputAccessoryView = toolbar
     }
     
     @objc func done() {
-        ingredientsTextView.endEditing(true)
+        ingredientsTextField.endEditing(true)
     }
 }
 
@@ -115,11 +112,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = resultTableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell") as? SearchResultTableViewCell
+        cell?.img.image = UIImage()
         cell?.name.text = recipes[indexPath.row].name
-
+        cell?.setupActivityIndicator()
         NetworkManager.loadImage ( recipes[indexPath.row].image) { img in
             DispatchQueue.main.async {
                 cell?.img.image = img
+                cell?.activityIndicator.removeFromSuperview()
             }
         }
         cell?.selectionStyle = .none

@@ -12,13 +12,16 @@ class SearchResultTableViewCell: UITableViewCell {
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var name: UILabel!
+    let activityIndicator = UIActivityIndicatorView()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func setupActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+          activityIndicator.centerXAnchor.constraint(equalTo: img.centerXAnchor),
+          activityIndicator.centerYAnchor.constraint(equalTo: img.centerYAnchor)
+        ])
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
+    
 }

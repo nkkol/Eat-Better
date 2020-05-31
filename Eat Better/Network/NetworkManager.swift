@@ -65,14 +65,16 @@ class NetworkManager {
         
         SearchSettingsDataManager.selectedDietLabels.forEach { label in
             if label.value == true {
-                components.queryItems?.append(URLQueryItem(name: "health", value: label.key.lowercased()))
+                components.queryItems?.append(URLQueryItem(name: "diet", value: label.key.lowercased()))
             }
         }
         
         if SearchSettingsDataManager.calories != "" {
              components.queryItems?.append(URLQueryItem(name: "calories", value: SearchSettingsDataManager.calories))
         }
+    //force
         let url = components.url!
+        print(url)
         return url
     }
     
