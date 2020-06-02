@@ -46,13 +46,31 @@ class RecipeViewController: UIViewController {
             ingedientString += ing + "\n"
         }
         block?.ingredientsLabel.text = ingedientString
-        
+        block?.saveButton.addTarget(self, action: #selector(saveARecipe), for: .touchUpInside)
+        if DBManager.share.isSaved(recipe: recipe) {
+            block?.saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        }
         stackView.addArrangedSubview(block ?? UIView())
         
         nutrientsBlock?.nutrientsCollectionView.delegate  = self
         nutrientsBlock?.nutrientsCollectionView.dataSource = self
         
         stackView.addArrangedSubview(nutrientsBlock ?? UIView())
+    }
+    
+    @objc func saveARecipe() {
+        var found = false
+        DBManager.share.savedRecipes?.forEach({ saved in
+            if saved.name == recipe.name && saved.image == recipe.image && saved.urlString == recipe.urlString {
+                DBManager.share.delete(recipe: saved)
+                block?.saveButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+                found = true
+            }
+        })
+        if !found {
+            DBManager.share.saveRecipe(recipe: recipe)
+            block?.saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        }
     }
     
     func setButton() {
@@ -73,11 +91,13 @@ class RecipeViewController: UIViewController {
         titlelabel.text = recipe.name
         titlelabel.textColor = .label
         titlelabel.font = UIFont.boldSystemFont(ofSize: 25)
-        titlelabel.backgroundColor = UIColor.clear
+        titlelabel.backgroundColor = .clear
         titlelabel.adjustsFontSizeToFitWidth = true
         titlelabel.textAlignment = .center
         self.navigationItem.titleView = titlelabel
     }
+    
+    
 }
 extension RecipeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

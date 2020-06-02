@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3DCCC9926B29673B2EC52FBD /* libPods-Eat Better.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 552C178B99A208504E74ED68 /* libPods-Eat Better.a */; };
+		D229A5472483CEA500FD54CB /* AnalisysNutrientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D229A5462483CEA500FD54CB /* AnalisysNutrientCollectionViewCell.swift */; };
+		D229A54D2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D229A54B2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld */; };
+		D229A54F2483E46500FD54CB /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D229A54E2483E46500FD54CB /* DBManager.swift */; };
 		D231D61524730A8700CEB7B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231D61424730A8700CEB7B2 /* AppDelegate.swift */; };
 		D231D61724730A8700CEB7B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231D61624730A8700CEB7B2 /* SceneDelegate.swift */; };
 		D231D61924730A8700CEB7B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231D61824730A8700CEB7B2 /* ViewController.swift */; };
@@ -36,8 +39,6 @@
 		D26882F7247BD4D300F790CD /* RecipeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26882F6247BD4D300F790CD /* RecipeStoryboard.storyboard */; };
 		D27A8829247EFE750059DF9E /* AnalysisMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */; };
 		D27A882B247EFEBA0059DF9E /* Analysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A882A247EFEBA0059DF9E /* Analysis.swift */; };
-		D27A882F247F16F70059DF9E /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27A882E247F16F70059DF9E /* AnalysisViewController.swift */; };
-		D27A8831247F17050059DF9E /* AnalysisStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27A8830247F17050059DF9E /* AnalysisStoryboard.storyboard */; };
 		D27EAD26247679ED00E19D22 /* SearchSettingsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27EAD25247679ED00E19D22 /* SearchSettingsDataManager.swift */; };
 		D2C221EE247BE791001A9F41 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C221ED247BE791001A9F41 /* View.xib */; };
 		D2C221F0247C061F001A9F41 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C221EF247C061F001A9F41 /* RecipeView.swift */; };
@@ -49,6 +50,9 @@
 		36EF65412B07AD5680FD1FCC /* Pods-Eat Better.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat Better.release.xcconfig"; path = "Target Support Files/Pods-Eat Better/Pods-Eat Better.release.xcconfig"; sourceTree = "<group>"; };
 		552C178B99A208504E74ED68 /* libPods-Eat Better.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eat Better.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B748AEC9AE4DA50A0E3946 /* Pods-Eat Better.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eat Better.debug.xcconfig"; path = "Target Support Files/Pods-Eat Better/Pods-Eat Better.debug.xcconfig"; sourceTree = "<group>"; };
+		D229A5462483CEA500FD54CB /* AnalisysNutrientCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalisysNutrientCollectionViewCell.swift; sourceTree = "<group>"; };
+		D229A54C2483D91E00FD54CB /* SavedRecipesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedRecipesModel.xcdatamodel; sourceTree = "<group>"; };
+		D229A54E2483E46500FD54CB /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D231D61124730A8700CEB7B2 /* Eat Better.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eat Better.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D231D61424730A8700CEB7B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D231D61624730A8700CEB7B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +83,6 @@
 		D26882F6247BD4D300F790CD /* RecipeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeStoryboard.storyboard; sourceTree = "<group>"; };
 		D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnalysisMockResponse.json; sourceTree = "<group>"; };
 		D27A882A247EFEBA0059DF9E /* Analysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analysis.swift; sourceTree = "<group>"; };
-		D27A882E247F16F70059DF9E /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
-		D27A8830247F17050059DF9E /* AnalysisStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnalysisStoryboard.storyboard; sourceTree = "<group>"; };
 		D27EAD25247679ED00E19D22 /* SearchSettingsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSettingsDataManager.swift; sourceTree = "<group>"; };
 		D2C221ED247BE791001A9F41 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		D2C221EF247C061F001A9F41 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,32 @@
 				36EF65412B07AD5680FD1FCC /* Pods-Eat Better.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D229A5482483D8CF00FD54CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D229A5462483CEA500FD54CB /* AnalisysNutrientCollectionViewCell.swift */,
+				D243B54E247EB80800A3AD9F /* NutritionAnalysisViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D229A5492483D8D600FD54CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D243B554247EB85200A3AD9F /* NutritionAnalysisStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D229A54A2483D8DB00FD54CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D27A882A247EFEBA0059DF9E /* Analysis.swift */,
+				D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D231D60824730A8700CEB7B2 = {
@@ -236,12 +264,9 @@
 		D243B556247EE52C00A3AD9F /* Nutrition Analisys */ = {
 			isa = PBXGroup;
 			children = (
-				D243B54E247EB80800A3AD9F /* NutritionAnalysisViewController.swift */,
-				D243B554247EB85200A3AD9F /* NutritionAnalysisStoryboard.storyboard */,
-				D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */,
-				D27A882A247EFEBA0059DF9E /* Analysis.swift */,
-				D27A882E247F16F70059DF9E /* AnalysisViewController.swift */,
-				D27A8830247F17050059DF9E /* AnalysisStoryboard.storyboard */,
+				D229A54A2483D8DB00FD54CB /* Model */,
+				D229A5492483D8D600FD54CB /* View */,
+				D229A5482483D8CF00FD54CB /* Controller */,
 			);
 			path = "Nutrition Analisys";
 			sourceTree = "<group>";
@@ -251,6 +276,8 @@
 			children = (
 				D243B552247EB84100A3AD9F /* SavedRecipesStoryboard.storyboard */,
 				D243B550247EB82300A3AD9F /* SavedRecipesTableViewController.swift */,
+				D229A54B2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld */,
+				D229A54E2483E46500FD54CB /* DBManager.swift */,
 			);
 			path = "Saved Recipes";
 			sourceTree = "<group>";
@@ -377,7 +404,6 @@
 				D24D431B2479910500D9BEC4 /* Podfile in Resources */,
 				D243B553247EB84100A3AD9F /* SavedRecipesStoryboard.storyboard in Resources */,
 				D231D62124730A8900CEB7B2 /* LaunchScreen.storyboard in Resources */,
-				D27A8831247F17050059DF9E /* AnalysisStoryboard.storyboard in Resources */,
 				D231D61E24730A8900CEB7B2 /* Assets.xcassets in Resources */,
 				D241DE55247A7D7000B53DF4 /* RecipesMockResponse.json in Resources */,
 				D243B54D247E8ACD00A3AD9F /* CollectionViewCell.xib in Resources */,
@@ -428,6 +454,7 @@
 				D241DE5F247AA2D100B53DF4 /* SearchResultTableViewCell.swift in Sources */,
 				D243B551247EB82300A3AD9F /* SavedRecipesTableViewController.swift in Sources */,
 				D27EAD26247679ED00E19D22 /* SearchSettingsDataManager.swift in Sources */,
+				D229A54D2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld in Sources */,
 				D231D61924730A8700CEB7B2 /* ViewController.swift in Sources */,
 				D27A882B247EFEBA0059DF9E /* Analysis.swift in Sources */,
 				D2FF62CE247D7E9000D77CD5 /* Nutrient.swift in Sources */,
@@ -437,12 +464,13 @@
 				D231D61724730A8700CEB7B2 /* SceneDelegate.swift in Sources */,
 				D241DE57247A968600B53DF4 /* RecipeData.swift in Sources */,
 				D243B54C247E8ACD00A3AD9F /* CollectionViewCell.swift in Sources */,
-				D27A882F247F16F70059DF9E /* AnalysisViewController.swift in Sources */,
 				D2481782247E858A003F18AA /* NutrientsView.swift in Sources */,
 				D26882F5247BD4BE00F790CD /* RecipeViewController.swift in Sources */,
 				D241DE4B2479AEF700B53DF4 /* NetworkManager.swift in Sources */,
 				D231D62B247535EE00CEB7B2 /* SearchSettingsViewController.swift in Sources */,
 				D241DE5D247AA0B400B53DF4 /* ApiClient.swift in Sources */,
+				D229A5472483CEA500FD54CB /* AnalisysNutrientCollectionViewCell.swift in Sources */,
+				D229A54F2483E46500FD54CB /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +670,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D229A54B2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D229A54C2483D91E00FD54CB /* SavedRecipesModel.xcdatamodel */,
+			);
+			currentVersion = D229A54C2483D91E00FD54CB /* SavedRecipesModel.xcdatamodel */;
+			path = SavedRecipesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D231D60924730A8700CEB7B2 /* Project object */;
 }

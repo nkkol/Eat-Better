@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -10,18 +10,46 @@
         <scene sceneID="hqg-1t-3ci">
             <objects>
                 <tableViewController storyboardIdentifier="SavedRecipesTableViewController" id="k6G-gs-LXA" customClass="SavedRecipesTableViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vJK-PT-Kq8">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vJK-PT-Kq8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DYq-5J-ou9">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="161" id="DYq-5J-ou9" customClass="SearchResultTableViewCell" customModule="Eat_Better" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DYq-5J-ou9" id="sln-mK-y0o">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FP8-RG-BEw">
+                                            <rect key="frame" x="219" y="51" width="167" height="59"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arh-nt-bbY">
+                                            <rect key="frame" x="32" y="17" width="126" height="126"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="126" id="wJm-pg-2iw"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FP8-RG-BEw" firstAttribute="leading" secondItem="arh-nt-bbY" secondAttribute="trailing" constant="61" id="64B-HB-h8H"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FP8-RG-BEw" secondAttribute="bottom" constant="40" id="7fm-9q-avZ"/>
+                                        <constraint firstItem="arh-nt-bbY" firstAttribute="top" secondItem="sln-mK-y0o" secondAttribute="topMargin" constant="6" id="BwN-kg-caR"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="arh-nt-bbY" secondAttribute="bottom" constant="7" id="RkW-5o-sO7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="FP8-RG-BEw" secondAttribute="trailing" constant="8" id="SCi-za-yTW"/>
+                                        <constraint firstItem="FP8-RG-BEw" firstAttribute="top" secondItem="sln-mK-y0o" secondAttribute="topMargin" constant="40" id="eFJ-8f-s6W"/>
+                                        <constraint firstItem="arh-nt-bbY" firstAttribute="leading" secondItem="sln-mK-y0o" secondAttribute="leadingMargin" constant="12" id="xNW-AT-cfQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="img" destination="arh-nt-bbY" id="YFu-wB-tuT"/>
+                                    <outlet property="name" destination="FP8-RG-BEw" id="QDm-u1-gG8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,11 +58,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Saved Recipes" image="bookmark" catalog="system" id="1od-yP-qqq"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orA-oc-ZPM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="84"/>
+            <point key="canvasLocation" x="176.81159420289856" y="83.967391304347828"/>
         </scene>
     </scenes>
     <resources>

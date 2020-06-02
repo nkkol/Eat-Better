@@ -14,4 +14,5 @@ class RecipeView: UIView {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
     @IBOutlet weak var ingredientsLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
 }

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nutrition Analisys-->
+        <scene sceneID="1BH-p5-jsC">
+            <objects>
+                <viewController restorationIdentifier="NutritionAnalysisViewController" storyboardIdentifier="NutritionAnalysisViewController" id="xFc-Sa-omq" customClass="NutritionAnalysisViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjN-aZ-ZOc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZd-FB-Pqj">
+                                <rect key="frame" x="20" y="30" width="374" height="151"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="A73-pJ-2SW"/>
+                                </constraints>
+                                <string key="text">3 cup rice,
+0.5 l milk</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOv-p9-7Fu">
+                                <rect key="frame" x="137" y="201" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EbP-g8-YJH"/>
+                                    <constraint firstAttribute="width" constant="140" id="Lh9-1U-l62"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Analyze"/>
+                                <connections>
+                                    <action selector="analyseButtonClicked:" destination="xFc-Sa-omq" eventType="touchUpInside" id="Icd-TT-zgz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdJ-dc-q8b">
+                                <rect key="frame" x="20" y="246" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m88-HF-v0u">
+                                <rect key="frame" x="20" y="277" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ItL-D8-MMa">
+                                <rect key="frame" x="20" y="318" width="394" height="369"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S00-vH-3Cm">
+                                    <size key="itemSize" width="204" height="111"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnalisysNutrientCollectionViewCell" id="QWN-tn-aru" customClass="AnalisysNutrientCollectionViewCell" customModule="Eat_Better" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="111"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UEr-5j-xE0">
+                                            <rect key="frame" x="0.0" y="0.0" width="204" height="111"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-lc-UgH">
+                                                    <rect key="frame" x="10" y="14.999999999999998" width="184" height="25.333333333333329"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="BaR-Bs-iMf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyH-lz-fOE">
+                                                    <rect key="frame" x="8" y="48.333333333333336" width="188" height="21.000000000000007"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="XGR-Eu-dvV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaC-5m-dZT">
+                                                    <rect key="frame" x="8" y="77.333333333333329" width="188" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="IrO-qs-nZE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LaC-5m-dZT" firstAttribute="leading" secondItem="UEr-5j-xE0" secondAttribute="leading" constant="8" id="1gj-7v-UEs"/>
+                                                <constraint firstAttribute="bottom" secondItem="LaC-5m-dZT" secondAttribute="bottom" constant="12.67" id="6Te-hY-oaw"/>
+                                                <constraint firstItem="YyH-lz-fOE" firstAttribute="leading" secondItem="UEr-5j-xE0" secondAttribute="leading" constant="8" id="7Id-JD-axK"/>
+                                                <constraint firstAttribute="trailing" secondItem="VI1-lc-UgH" secondAttribute="trailing" constant="10" id="85t-q9-Cbi"/>
+                                                <constraint firstItem="YyH-lz-fOE" firstAttribute="top" secondItem="VI1-lc-UgH" secondAttribute="bottom" constant="8" id="MA9-Sk-UbR"/>
+                                                <constraint firstItem="LaC-5m-dZT" firstAttribute="top" secondItem="YyH-lz-fOE" secondAttribute="bottom" constant="8" id="f5m-cX-HVw"/>
+                                                <constraint firstAttribute="trailing" secondItem="LaC-5m-dZT" secondAttribute="trailing" constant="8" id="i8r-Em-FcO"/>
+                                                <constraint firstItem="VI1-lc-UgH" firstAttribute="top" secondItem="UEr-5j-xE0" secondAttribute="top" constant="15" id="laA-2w-Aop"/>
+                                                <constraint firstAttribute="trailing" secondItem="YyH-lz-fOE" secondAttribute="trailing" constant="8" id="ly7-LR-Gxc"/>
+                                                <constraint firstItem="VI1-lc-UgH" firstAttribute="leading" secondItem="UEr-5j-xE0" secondAttribute="leading" constant="10" id="t0i-yp-Z73"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="204" height="111"/>
+                                        <connections>
+                                            <outlet property="fromDailyLabel" destination="LaC-5m-dZT" id="sYV-zU-krQ"/>
+                                            <outlet property="nameLabel" destination="VI1-lc-UgH" id="EHA-Fi-5Xd"/>
+                                            <outlet property="quantityUnitLabel" destination="YyH-lz-fOE" id="jJ6-Hx-JE2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ItL-D8-MMa" firstAttribute="trailing" secondItem="LJ3-rB-8Ge" secondAttribute="trailing" id="3ym-VW-Meq"/>
+                            <constraint firstItem="aZd-FB-Pqj" firstAttribute="top" secondItem="LJ3-rB-8Ge" secondAttribute="top" constant="30" id="CSt-ol-4il"/>
+                            <constraint firstItem="aZd-FB-Pqj" firstAttribute="leading" secondItem="LJ3-rB-8Ge" secondAttribute="leading" constant="20" id="DeD-iT-RU7"/>
+                            <constraint firstItem="LJ3-rB-8Ge" firstAttribute="trailing" secondItem="UdJ-dc-q8b" secondAttribute="trailing" constant="20" id="FDj-in-eMJ"/>
+                            <constraint firstItem="ItL-D8-MMa" firstAttribute="leading" secondItem="LJ3-rB-8Ge" secondAttribute="leading" constant="20" id="Fch-xP-ehw"/>
+                            <constraint firstItem="ItL-D8-MMa" firstAttribute="top" secondItem="m88-HF-v0u" secondAttribute="bottom" constant="20" id="KqI-Ug-0Ss"/>
+                            <constraint firstItem="UdJ-dc-q8b" firstAttribute="top" secondItem="QOv-p9-7Fu" secondAttribute="bottom" constant="15" id="Q0O-F1-d0O"/>
+                            <constraint firstItem="m88-HF-v0u" firstAttribute="top" secondItem="UdJ-dc-q8b" secondAttribute="bottom" constant="10" id="aAE-Hh-III"/>
+                            <constraint firstItem="QOv-p9-7Fu" firstAttribute="top" secondItem="aZd-FB-Pqj" secondAttribute="bottom" constant="20" id="bb0-eD-jwP"/>
+                            <constraint firstItem="LJ3-rB-8Ge" firstAttribute="trailing" secondItem="m88-HF-v0u" secondAttribute="trailing" constant="20" id="cQ2-tJ-JEA"/>
+                            <constraint firstItem="m88-HF-v0u" firstAttribute="leading" secondItem="LJ3-rB-8Ge" secondAttribute="leading" constant="20" id="cm0-X7-Lss"/>
+                            <constraint firstItem="ItL-D8-MMa" firstAttribute="bottom" secondItem="LJ3-rB-8Ge" secondAttribute="bottom" id="hnm-Iu-hzw"/>
+                            <constraint firstItem="UdJ-dc-q8b" firstAttribute="leading" secondItem="LJ3-rB-8Ge" secondAttribute="leading" constant="20" id="iyJ-6W-VJy"/>
+                            <constraint firstItem="QOv-p9-7Fu" firstAttribute="centerX" secondItem="aZd-FB-Pqj" secondAttribute="centerX" id="oja-I9-lWE"/>
+                            <constraint firstItem="LJ3-rB-8Ge" firstAttribute="trailing" secondItem="aZd-FB-Pqj" secondAttribute="trailing" constant="20" id="vjY-Cl-8Cp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LJ3-rB-8Ge"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nutrition Analisys" image="checkmark.square" catalog="system" id="BPr-iD-pqt"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="kcalLabel" destination="UdJ-dc-q8b" id="WIq-BQ-vzY"/>
+                        <outlet property="nutrientsCollectionView" destination="ItL-D8-MMa" id="yNX-im-63C"/>
+                        <outlet property="textView" destination="aZd-FB-Pqj" id="UNw-aq-aq1"/>
+                        <outlet property="weightLabel" destination="m88-HF-v0u" id="fuR-iX-i4C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E3M-Ss-HX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="84.782608695652186"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+    </resources>
+</document>

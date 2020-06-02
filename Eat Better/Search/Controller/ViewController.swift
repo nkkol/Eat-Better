@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
         prepareForLoading()
         setDoneButton()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +75,6 @@ class ViewController: UIViewController {
                 self.settingsButton.isEnabled = true
                 self.indicator.removeFromSuperview()
                 self.dimmingView.removeFromSuperview()
-                
-      //          print (self.recipes)
             }
         }
     }
@@ -111,7 +110,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultTableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell") as? SearchResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultTableViewCell") as? SearchResultTableViewCell
         cell?.img.image = UIImage()
         cell?.name.text = recipes[indexPath.row].name
         cell?.setupActivityIndicator()
@@ -131,4 +130,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         recipeViewController?.recipe = recipes[indexPath.row]
         self.navigationController?.pushViewController(recipeViewController ?? self, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let save = saveAction(at: indexPath)
+        save.backgroundColor = .systemGreen
+        return UISwipeActionsConfiguration(actions: [save])
+    }
+    
+    func saveAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Save") {(action, view, completion) in
+            if !DBManager.share.isSaved(recipe: self.recipes[indexPath.row]) {
+                DBManager.share.saveRecipe(recipe: self.recipes[indexPath.row])
+            }
+           completion(true)
+           }
+        return action
+       }
 }

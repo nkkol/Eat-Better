@@ -31,7 +31,6 @@ struct ApiClient {
     
     mutating func fetchAnalysis (_ json: Data, completion: @escaping (Analysis) -> Void) {
       let gotAnalysis = try? JSONDecoder().decode(Analysis.self, from: json)
-  //      var analysis = gotAnalysis
         print (gotAnalysis)
         //force
         completion(gotAnalysis!)

@@ -78,6 +78,17 @@ class NetworkManager {
         return url
     }
     
+    static func prepareForAnalyze(_ ingredients: String) -> URL {
+
+           //force
+           var components = URLComponents(string: "https://api.edamam.com/api/nutrition-data?")!
+           components.queryItems = [ URLQueryItem(name: "app_id", value: "78f69e50"), URLQueryItem(name: "app_key", value: "96a355c730f9c3659f59eeedac12db8c"), URLQueryItem(name: "ingr", value: ingredients)]
+       //force
+           let url = components.url!
+           print(url)
+           return url
+       }
+    
     static func getAnalisys (urlString: URL, completion: @escaping (Data) -> Void) {
             AF.request(urlString).response { response in
                 print(urlString)

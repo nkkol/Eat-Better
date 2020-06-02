@@ -17,7 +17,7 @@
                     <rect key="frame" x="62" y="0.0" width="250" height="282.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDD-dp-HgL">
-                    <rect key="frame" x="25" y="302.5" width="334" height="21"/>
+                    <rect key="frame" x="25" y="302.5" width="284" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -40,6 +40,15 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qup-cz-t7K">
+                    <rect key="frame" x="329" y="298" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="ct6-wJ-siT"/>
+                        <constraint firstAttribute="height" constant="30" id="uQp-t4-ba1"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="bookmark" catalog="system"/>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -49,12 +58,14 @@
                 <constraint firstItem="GDD-dp-HgL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="5Ub-ga-fnm"/>
                 <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="6QQ-CI-Ald"/>
                 <constraint firstItem="v3j-2K-AAK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="7JS-Dd-INd"/>
+                <constraint firstItem="Qup-cz-t7K" firstAttribute="leading" secondItem="GDD-dp-HgL" secondAttribute="trailing" constant="20" id="FLR-qE-5jH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="v3j-2K-AAK" secondAttribute="bottom" id="JCH-Z9-OHP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GDD-dp-HgL" secondAttribute="trailing" constant="16" id="KlS-SL-YFa"/>
                 <constraint firstItem="GDD-dp-HgL" firstAttribute="top" secondItem="7dw-R2-Dav" secondAttribute="bottom" constant="20" id="b3b-mE-0ch"/>
                 <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bR0-Hf-eWM"/>
+                <constraint firstItem="Qup-cz-t7K" firstAttribute="centerY" secondItem="GDD-dp-HgL" secondAttribute="centerY" id="eGg-9P-xuW"/>
                 <constraint firstItem="bmz-B0-d8c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="gBP-As-rca"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="v3j-2K-AAK" secondAttribute="trailing" constant="10" id="l93-31-ZwO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Qup-cz-t7K" secondAttribute="trailing" constant="16" id="qZ3-JG-qMU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7dw-R2-Dav" secondAttribute="trailing" constant="63" id="r09-Fy-cK9"/>
                 <constraint firstItem="7dw-R2-Dav" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="tjU-td-LMz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bmz-B0-d8c" secondAttribute="trailing" constant="16" id="yaM-oS-aCy"/>
@@ -65,9 +76,13 @@
                 <outlet property="caloriesLabel" destination="bmz-B0-d8c" id="loH-yc-pvr"/>
                 <outlet property="imageView" destination="7dw-R2-Dav" id="UhC-Dn-vpr"/>
                 <outlet property="ingredientsLabel" destination="v3j-2K-AAK" id="IFE-mp-q6m"/>
+                <outlet property="saveButton" destination="Qup-cz-t7K" id="Orx-UN-rrU"/>
                 <outlet property="weightLabel" destination="GDD-dp-HgL" id="xym-MG-NSf"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="242.42878560719643"/>
         </view>
     </objects>
+    <resources>
+        <image name="bookmark" catalog="system" width="112" height="128"/>
+    </resources>
 </document>
