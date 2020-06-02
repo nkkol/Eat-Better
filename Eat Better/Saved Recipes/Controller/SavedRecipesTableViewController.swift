@@ -88,8 +88,9 @@ class SavedRecipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 200
     }
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = deleteAction(at: indexPath)
         return UISwipeActionsConfiguration(actions: [delete])
@@ -103,5 +104,12 @@ class SavedRecipesTableViewController: UITableViewController {
            }
         return action
        }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "RecipeStoryboard", bundle: nil)
+        let recipeViewController = storyboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController
+  //      recipeViewController?.recipe = DBManager.share.savedRecipes?[indexPath.row]
+        self.navigationController?.pushViewController(recipeViewController ?? self, animated: true)
+    }
     
 }

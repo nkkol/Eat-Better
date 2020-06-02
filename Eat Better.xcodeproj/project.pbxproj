@@ -274,12 +274,44 @@
 		D243B557247EE54F00A3AD9F /* Saved Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				D243B552247EB84100A3AD9F /* SavedRecipesStoryboard.storyboard */,
-				D243B550247EB82300A3AD9F /* SavedRecipesTableViewController.swift */,
-				D229A54B2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld */,
-				D229A54E2483E46500FD54CB /* DBManager.swift */,
+				D25D8A952486E2CE00CC450B /* DataBase */,
+				D25D8A942486E2C000CC450B /* Model */,
+				D25D8A932486E2BB00CC450B /* View */,
+				D25D8A922486E28300CC450B /* Controller */,
 			);
 			path = "Saved Recipes";
+			sourceTree = "<group>";
+		};
+		D25D8A922486E28300CC450B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D243B550247EB82300A3AD9F /* SavedRecipesTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D25D8A932486E2BB00CC450B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D243B552247EB84100A3AD9F /* SavedRecipesStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D25D8A942486E2C000CC450B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D25D8A952486E2CE00CC450B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				D229A54E2483E46500FD54CB /* DBManager.swift */,
+				D229A54B2483D91E00FD54CB /* SavedRecipesModel.xcdatamodeld */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		D27EAD222476794200E19D22 /* Search */ = {

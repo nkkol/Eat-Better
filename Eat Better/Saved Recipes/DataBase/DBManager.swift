@@ -21,9 +21,7 @@ class DBManager {
     }
     
     func getData() -> [SavedRecipe]? {
-        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedRecipe")
-        
         do {
             return try manageContext?.fetch(request) as? [SavedRecipe]
         } catch {
@@ -70,4 +68,9 @@ class DBManager {
         })
         return found
     }
+    /*
+    func recipeFromSaved(savedRecipe: SavedRecipe) -> Recipe {
+        let recipe = Recipe(name: <#String#>, image: <#String#>, source: <#String#>, urlString: <#String#>, ingredients: <#[String]#>, calories: <#Double#>, weight: <#Double#>, nutrients: <#[Nutrient]#>)
+        return recipe
+    }*/
 }
