@@ -1,0 +1,12 @@
+{
+"labels":[
+{"label" : "Balanced",
+"description" : "Protein/Fat/Carb values in 15/35/50 ratio"},
+{"label" : "High-Protein",
+"description" : "More than 50% of total calories from proteins"},
+{"label" : "Low-Carb",
+"description" : "Less than 20% of total calories from carbs"},
+{"label" : "Low-Fat",
+"description" : "Less than 15% of total calories from fat"}
+]
+}

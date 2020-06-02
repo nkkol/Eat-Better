@@ -35,6 +35,10 @@
 		D2481782247E858A003F18AA /* NutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2481781247E858A003F18AA /* NutrientsView.swift */; };
 		D2481784247E859A003F18AA /* NutrientsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2481783247E859A003F18AA /* NutrientsView.xib */; };
 		D24D431B2479910500D9BEC4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D24D431A2479910500D9BEC4 /* Podfile */; };
+		D25D8A972486F98A00CC450B /* HealthLabelsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = D25D8A962486F98A00CC450B /* HealthLabelsMock.json */; };
+		D25D8A992486FABC00CC450B /* DietLabelsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = D25D8A982486FABC00CC450B /* DietLabelsMock.json */; };
+		D25D8A9B2486FB5800CC450B /* SettingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25D8A9A2486FB5800CC450B /* SettingLabel.swift */; };
+		D25D8A9F2486FE0600CC450B /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25D8A9E2486FE0600CC450B /* Labels.swift */; };
 		D26882F5247BD4BE00F790CD /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26882F4247BD4BE00F790CD /* RecipeViewController.swift */; };
 		D26882F7247BD4D300F790CD /* RecipeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D26882F6247BD4D300F790CD /* RecipeStoryboard.storyboard */; };
 		D27A8829247EFE750059DF9E /* AnalysisMockResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */; };
@@ -79,6 +83,10 @@
 		D2481781247E858A003F18AA /* NutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsView.swift; sourceTree = "<group>"; };
 		D2481783247E859A003F18AA /* NutrientsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NutrientsView.xib; sourceTree = "<group>"; };
 		D24D431A2479910500D9BEC4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D25D8A962486F98A00CC450B /* HealthLabelsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HealthLabelsMock.json; sourceTree = "<group>"; };
+		D25D8A982486FABC00CC450B /* DietLabelsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DietLabelsMock.json; sourceTree = "<group>"; };
+		D25D8A9A2486FB5800CC450B /* SettingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLabel.swift; sourceTree = "<group>"; };
+		D25D8A9E2486FE0600CC450B /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D26882F4247BD4BE00F790CD /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		D26882F6247BD4D300F790CD /* RecipeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeStoryboard.storyboard; sourceTree = "<group>"; };
 		D27A8828247EFE750059DF9E /* AnalysisMockResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnalysisMockResponse.json; sourceTree = "<group>"; };
@@ -330,6 +338,10 @@
 				D241DE532479B40F00B53DF4 /* Model */,
 				D241DE522479B40700B53DF4 /* View */,
 				D241DE512479B3FF00B53DF4 /* Controller */,
+				D25D8A962486F98A00CC450B /* HealthLabelsMock.json */,
+				D25D8A982486FABC00CC450B /* DietLabelsMock.json */,
+				D25D8A9E2486FE0600CC450B /* Labels.swift */,
+				D25D8A9A2486FB5800CC450B /* SettingLabel.swift */,
 			);
 			path = SearchSettings;
 			sourceTree = "<group>";
@@ -436,10 +448,12 @@
 				D24D431B2479910500D9BEC4 /* Podfile in Resources */,
 				D243B553247EB84100A3AD9F /* SavedRecipesStoryboard.storyboard in Resources */,
 				D231D62124730A8900CEB7B2 /* LaunchScreen.storyboard in Resources */,
+				D25D8A992486FABC00CC450B /* DietLabelsMock.json in Resources */,
 				D231D61E24730A8900CEB7B2 /* Assets.xcassets in Resources */,
 				D241DE55247A7D7000B53DF4 /* RecipesMockResponse.json in Resources */,
 				D243B54D247E8ACD00A3AD9F /* CollectionViewCell.xib in Resources */,
 				D243B555247EB85200A3AD9F /* NutritionAnalysisStoryboard.storyboard in Resources */,
+				D25D8A972486F98A00CC450B /* HealthLabelsMock.json in Resources */,
 				D2C221EE247BE791001A9F41 /* View.xib in Resources */,
 				D2481784247E859A003F18AA /* NutrientsView.xib in Resources */,
 				D231D62D247535FF00CEB7B2 /* SearchSettingsStoryboard.storyboard in Resources */,
@@ -481,7 +495,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25D8A9B2486FB5800CC450B /* SettingLabel.swift in Sources */,
 				D241DE59247A96DC00B53DF4 /* HitsData.swift in Sources */,
+				D25D8A9F2486FE0600CC450B /* Labels.swift in Sources */,
 				D243B54F247EB80800A3AD9F /* NutritionAnalysisViewController.swift in Sources */,
 				D241DE5F247AA2D100B53DF4 /* SearchResultTableViewCell.swift in Sources */,
 				D243B551247EB82300A3AD9F /* SavedRecipesTableViewController.swift in Sources */,

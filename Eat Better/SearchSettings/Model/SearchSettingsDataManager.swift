@@ -9,7 +9,7 @@
 import Foundation
 
 class SearchSettingsDataManager {
-    
+    let apiClient = ApiClient()
     //json them!
     static var healthLabelsDetails = [
         "Alcohol-free" : "No alcohol used or contained",
@@ -17,19 +17,19 @@ class SearchSettingsDataManager {
         "Sugar-conscious" : "Less than 4g of sugar per serving",
         "Tree-Nut-free" : "No tree nuts or products containing tree nuts",
         "Vegan" : "No meat, poultry, fish, dairy, eggs or honey",
-        "Vegetarian" : "No meat, poultry, or fish",
+        "Vegetarian" : "No meat, poultry, or fish"
     ]
     
     static var sortedHealthLabelsDetails = {
         healthLabelsDetails.sorted(by: <)
     }
     
-    static var dietLabelsDetails = [
-        "Balanced" : "Protein/Fat/Carb values in 15/35/50 ratio",
-        "High-Protein" : "More than 50% of total calories from proteins",
-        "Low-Carb" : "Less than 20% of total calories from carbs",
-        "Low-Fat" : "Less than 15% of total calories from fat",
-    ]
+    static var dietLabelsDetails =  [
+           "Balanced" : "Protein/Fat/Carb values in 15/35/50 ratio",
+           "High-Protein" : "More than 50% of total calories from proteins",
+           "Low-Carb" : "Less than 20% of total calories from carbs",
+           "Low-Fat" : "Less than 15% of total calories from fat",
+       ]
     
     static var sortedDietLabelsDetails = {
         dietLabelsDetails.sorted(by: <)

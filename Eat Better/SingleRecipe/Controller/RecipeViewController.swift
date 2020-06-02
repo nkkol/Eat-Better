@@ -30,9 +30,6 @@ class RecipeViewController: UIViewController {
         setTitle()
         setBlocks()
         setCookingButton()
-        if isSaved {
-            setNutrientsButton()
-        }
     }
     
     func setBlocks() {
@@ -43,11 +40,7 @@ class RecipeViewController: UIViewController {
         }
         block?.weightLabel.text = "Weight: " + String(format: "%.2f", recipe.weight) + " g"
         block?.caloriesLabel.text = "Calories: " + String(format: "%.2f", recipe.calories) + " kcal"
-        var ingedientString = "Ingredients:\n"
-        recipe.ingredients.forEach { (ing) in
-            ingedientString += ing + "\n"
-        }
-        block?.ingredientsLabel.text = ingedientString
+        block?.ingredientsLabel.text = "Ingredients:\n" + ingredientsToString(ingredients: recipe.ingredients)
         block?.saveButton.addTarget(self, action: #selector(saveARecipe), for: .touchUpInside)
         if DBManager.share.isSaved(recipe: recipe) {
             block?.saveButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
@@ -84,16 +77,13 @@ class RecipeViewController: UIViewController {
         stackView.addArrangedSubview(cookingButton)
     }
     
-    func setNutrientsButton() {
-        let nutrientsButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        nutrientsButton.setTitle("Okay, how to cook it?", for: .normal)
-        nutrientsButton.setTitleColor(.systemBlue, for: .normal)
-        nutrientsButton.addTarget(self, action: #selector(findNutrients), for: .touchUpInside)
-        stackView.addArrangedSubview(nutrientsButton)
-    }
     
-    @objc func findNutrients() {
-        
+    func ingredientsToString(ingredients: [String]) -> String{
+        var ingedientString = ""
+        ingredients.forEach { (ing) in
+            ingedientString += ing + "\n"
+        }
+        return ingedientString
     }
     
     @objc func findMore() {
@@ -121,8 +111,7 @@ extension RecipeViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
-        //force
-        let cell : CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cell : CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell ?? CollectionViewCell()
         cell.nameLabel.text = recipe.nutrients[indexPath.row].label
         cell.quantityUnitLabel.text = String(format: "%.2f", recipe.nutrients[indexPath.row].quantity) + " " + recipe.nutrients[indexPath.row].unit
         if indexPath.row % 2 == 1 {
