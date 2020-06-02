@@ -38,6 +38,7 @@ class DBManager {
         savedRecipe.calories = recipe.calories
         savedRecipe.image = recipe.image
         savedRecipe.urlString = recipe.urlString
+        savedRecipe.source = recipe.source
         var ingedientString = ""
         recipe.ingredients.forEach { (ing) in
                    ingedientString += ing + "\n"
@@ -68,9 +69,9 @@ class DBManager {
         })
         return found
     }
-    /*
+    
     func recipeFromSaved(savedRecipe: SavedRecipe) -> Recipe {
-        let recipe = Recipe(name: <#String#>, image: <#String#>, source: <#String#>, urlString: <#String#>, ingredients: <#[String]#>, calories: <#Double#>, weight: <#Double#>, nutrients: <#[Nutrient]#>)
+        let recipe = Recipe(name: savedRecipe.name ?? "", image: savedRecipe.image ?? "", source: savedRecipe.source ?? "", urlString: savedRecipe.urlString ?? "", ingredients: [savedRecipe.ingredients ?? ""], calories: savedRecipe.calories, weight: savedRecipe.weight, nutrients: [])
         return recipe
-    }*/
+    }
 }

@@ -108,7 +108,8 @@ class SavedRecipesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "RecipeStoryboard", bundle: nil)
         let recipeViewController = storyboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController
-  //      recipeViewController?.recipe = DBManager.share.savedRecipes?[indexPath.row]
+        recipeViewController?.recipe = DBManager.share.recipeFromSaved(savedRecipe: DBManager.share.savedRecipes?[indexPath.row] ?? SavedRecipe())
+        recipeViewController?.isSaved = true
         self.navigationController?.pushViewController(recipeViewController ?? self, animated: true)
     }
     

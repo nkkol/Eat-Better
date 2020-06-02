@@ -5,10 +5,11 @@
         <attribute name="image" attributeType="String"/>
         <attribute name="ingredients" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
         <attribute name="urlString" attributeType="String"/>
         <attribute name="weight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="SavedRecipe" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="SavedRecipe" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

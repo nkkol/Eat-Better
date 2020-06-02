@@ -12,6 +12,7 @@ import WebKit
 class RecipeViewController: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
+    var isSaved = false
     
     var recipe = Recipe(name: "Default",
                         image: "Default",
@@ -28,9 +29,10 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
         setTitle()
         setBlocks()
-        setButton()
-
-
+        setCookingButton()
+        if isSaved {
+            setNutrientsButton()
+        }
     }
     
     func setBlocks() {
@@ -52,10 +54,11 @@ class RecipeViewController: UIViewController {
         }
         stackView.addArrangedSubview(block ?? UIView())
         
-        nutrientsBlock?.nutrientsCollectionView.delegate  = self
-        nutrientsBlock?.nutrientsCollectionView.dataSource = self
-        
-        stackView.addArrangedSubview(nutrientsBlock ?? UIView())
+        if !isSaved {
+            nutrientsBlock?.nutrientsCollectionView.delegate  = self
+            nutrientsBlock?.nutrientsCollectionView.dataSource = self
+            stackView.addArrangedSubview(nutrientsBlock ?? UIView())
+        }
     }
     
     @objc func saveARecipe() {
@@ -73,12 +76,24 @@ class RecipeViewController: UIViewController {
         }
     }
     
-    func setButton() {
+    func setCookingButton() {
         let cookingButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         cookingButton.setTitle("Okay, how to cook it?", for: .normal)
         cookingButton.setTitleColor(.systemBlue, for: .normal)
         cookingButton.addTarget(self, action: #selector(findMore), for: .touchUpInside)
         stackView.addArrangedSubview(cookingButton)
+    }
+    
+    func setNutrientsButton() {
+        let nutrientsButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        nutrientsButton.setTitle("Okay, how to cook it?", for: .normal)
+        nutrientsButton.setTitleColor(.systemBlue, for: .normal)
+        nutrientsButton.addTarget(self, action: #selector(findNutrients), for: .touchUpInside)
+        stackView.addArrangedSubview(nutrientsButton)
+    }
+    
+    @objc func findNutrients() {
+        
     }
     
     @objc func findMore() {
