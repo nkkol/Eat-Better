@@ -264,6 +264,8 @@
 		D241DE5B247AA04000B53DF4 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				D25D8A962486F98A00CC450B /* HealthLabelsMock.json */,
+				D25D8A982486FABC00CC450B /* DietLabelsMock.json */,
 				D241DE54247A7D7000B53DF4 /* RecipesMockResponse.json */,
 			);
 			path = Mock;
@@ -338,8 +340,6 @@
 				D241DE532479B40F00B53DF4 /* Model */,
 				D241DE522479B40700B53DF4 /* View */,
 				D241DE512479B3FF00B53DF4 /* Controller */,
-				D25D8A962486F98A00CC450B /* HealthLabelsMock.json */,
-				D25D8A982486FABC00CC450B /* DietLabelsMock.json */,
 				D25D8A9E2486FE0600CC450B /* Labels.swift */,
 				D25D8A9A2486FB5800CC450B /* SettingLabel.swift */,
 			);

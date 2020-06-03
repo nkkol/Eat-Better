@@ -10,7 +10,7 @@
         <!--Search Settings View Controller-->
         <scene sceneID="KNc-OJ-70R">
             <objects>
-                <viewController storyboardIdentifier="SearchSettingsViewController" id="Pzf-Ok-45j" customClass="SearchSettingsViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pzf-Ok-45j" customClass="SearchSettingsViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BeP-UX-Fw3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

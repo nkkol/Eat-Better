@@ -11,7 +11,7 @@
         <!--Nutrition Analisys-->
         <scene sceneID="1BH-p5-jsC">
             <objects>
-                <viewController restorationIdentifier="NutritionAnalysisViewController" storyboardIdentifier="NutritionAnalysisViewController" id="xFc-Sa-omq" customClass="NutritionAnalysisViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NutritionAnalysisViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xFc-Sa-omq" customClass="NutritionAnalysisViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mjN-aZ-ZOc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

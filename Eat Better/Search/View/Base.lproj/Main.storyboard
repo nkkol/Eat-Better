@@ -10,7 +10,7 @@
         <!--Recipe Search-->
         <scene sceneID="3dE-yX-JXS">
             <objects>
-                <navigationController id="Xdc-hO-CFL" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xdc-hO-CFL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recipe Search" image="magnifyingglass" catalog="system" id="89P-Rr-FdW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="l4M-vV-fVV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -38,7 +38,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="PKa-jE-GMh">
             <objects>
-                <tabBarController id="I9b-8k-dz3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UITabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I9b-8k-dz3" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Mez-IF-OFq"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4T3-gz-TBy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -58,7 +58,7 @@
         <!--Recipe Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Eat_Better" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

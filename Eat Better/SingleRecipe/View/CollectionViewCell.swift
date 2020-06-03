@@ -15,7 +15,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var quantityUnitLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

@@ -44,7 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     } ()
-
+    
+    func application(_ application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+    
+    func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
 
 }
 

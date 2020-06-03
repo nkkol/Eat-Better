@@ -102,6 +102,25 @@ class ViewController: UIViewController {
     @objc func done() {
         ingredientsTextField.endEditing(true)
     }
+    
+    // MARK: - State Restoration
+    
+    private static let encodingIngredientsText = "encodingIngredientsText"
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(self.ingredientsTextField.text, forKey: ViewController.encodingIngredientsText)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        ingredientsTextField.text = coder.decodeObject(forKey: ViewController.encodingIngredientsText) as? String
+    }
+    
+    override func applicationFinishedRestoringState() {
+        super.applicationFinishedRestoringState()
+        print("Finished restoring state")
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
