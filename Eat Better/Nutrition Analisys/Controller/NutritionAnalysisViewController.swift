@@ -41,29 +41,41 @@ class NutritionAnalysisViewController: UIViewController {
 
     func getSearchResults (ing: String) {
         let url = NetworkManager.prepareForAnalyze(textView.text ?? "")
-        NetworkManager.searchRecipes (urlString: url) { data in
-        self.apiClient.fetchAnalysis(data) { analysis in
-            self.calories = analysis.calories
-            self.nutrients = analysis.nutrients
-            self.weight = analysis.weight
-            if self.nutrients.count == 0 {
+        NetworkManager.searchRecipes (urlString: url) { result in
+            switch result {
+            case .success(let data):
+                self.apiClient.fetchAnalysis(data) { analysis in
+                    self.calories = analysis.calories
+                    self.nutrients = analysis.nutrients
+                    self.weight = analysis.weight
+                    if self.nutrients.count == 0 {
+                        self.kcalLabel.isHidden = true
+                        self.weightLabel.isHidden = true
+                        self.nutrientsCollectionView.isHidden = true
+                        let alert = UIAlertController(title: "Ooops", message: "The nutrition for some ingredients can not been calculated. Please check the ingredient spelling or if you have entered a quantities for the ingredients.", preferredStyle: UIAlertController.Style.alert)
+                         alert.addAction(UIAlertAction(title: "OK :(", style: UIAlertAction.Style.default, handler: nil))
+                         self.present(alert, animated: true, completion: nil)
+                    }
+                    else {
+                        self.dimmingView.removeFromSuperview()
+                        self.indicator.removeFromSuperview()
+                        self.kcalLabel.isHidden = false
+                        self.weightLabel.isHidden = false
+                        self.nutrientsCollectionView.isHidden = false
+                        self.setupAnalisys()
+                    }
+                }
+            case .failure(let error):
+                let alert = UIAlertController(title: "Ooops", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK :(", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.dimmingView.removeFromSuperview()
+                self.indicator.removeFromSuperview()
                 self.kcalLabel.isHidden = true
                 self.weightLabel.isHidden = true
                 self.nutrientsCollectionView.isHidden = true
-                let alert = UIAlertController(title: "Ooops", message: "The nutrition for some ingredients can not been calculated. Please check the ingredient spelling or if you have entered a quantities for the ingredients.", preferredStyle: UIAlertController.Style.alert)
-                 alert.addAction(UIAlertAction(title: "OK :(", style: UIAlertAction.Style.default, handler: nil))
-                 self.present(alert, animated: true, completion: nil)
-            }
-            else {
-                self.dimmingView.removeFromSuperview()
-                self.indicator.removeFromSuperview()
-                self.kcalLabel.isHidden = false
-                self.weightLabel.isHidden = false
-                self.nutrientsCollectionView.isHidden = false
-                self.setupAnalisys()
             }
         }
-    }
     }
     
     func prepareForLoading() {

@@ -14,12 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var ingredientsTextField: UITextField!
     @IBOutlet weak var settingsButton: UIButton!
-    
+
     var apiClient = ApiClient()
     var recipes = [Recipe]()
     
     var indicator = ANActivityIndicatorView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     let dimmingView = UIView()
+    
+    var restored = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,6 @@ class ViewController: UIViewController {
     
         prepareForLoading()
         setDoneButton()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,8 +60,10 @@ class ViewController: UIViewController {
 
     func getSearchResults () {
         let url = NetworkManager.prepareForSearch(ingredientsTextField.text ?? "")
-        NetworkManager.searchRecipes (urlString: url) { data in
-            self.apiClient.fetchRecipes(data) { recipesArray in
+        NetworkManager.searchRecipes (urlString: url) { result in
+            switch result {
+            case .success (let data):
+                self.apiClient.fetchRecipes(data) { recipesArray in
                 self.recipes = recipesArray
                 if self.recipes.count > 0 {
                     self.resultTableView.reloadData()
@@ -69,13 +72,20 @@ class ViewController: UIViewController {
                 else {
                     self.resultTableView.isHidden = true
                     let alert = UIAlertController(title: "Ooops", message: "No recipes were found.", preferredStyle: UIAlertController.Style.alert)
+                         alert.addAction(UIAlertAction(title: "OK :(", style: UIAlertAction.Style.default, handler: nil))
+                         self.present(alert, animated: true, completion: nil)
+                    }
+
+                }
+            case .failure (let error):
+               self.resultTableView.isHidden = true
+               let alert = UIAlertController(title: "Ooops", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                      alert.addAction(UIAlertAction(title: "OK :(", style: UIAlertAction.Style.default, handler: nil))
                      self.present(alert, animated: true, completion: nil)
-                }
-                self.settingsButton.isEnabled = true
-                self.indicator.removeFromSuperview()
-                self.dimmingView.removeFromSuperview()
             }
+            self.settingsButton.isEnabled = true
+            self.indicator.removeFromSuperview()
+            self.dimmingView.removeFromSuperview()
         }
     }
 
@@ -113,8 +123,9 @@ class ViewController: UIViewController {
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
+        ingredientsTextField.text = coder.decodeObject(forKey: ViewController.encodingIngredientsText) as? String ?? "empty"
+        restored = coder.decodeObject(forKey: ViewController.encodingIngredientsText) as? String ?? "empty"
         super.decodeRestorableState(with: coder)
-        ingredientsTextField.text = coder.decodeObject(forKey: ViewController.encodingIngredientsText) as? String
     }
     
     override func applicationFinishedRestoringState() {
@@ -166,3 +177,4 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return action
        }
 }
+

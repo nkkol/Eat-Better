@@ -22,7 +22,7 @@ class SearchSettingsViewController: UIViewController {
         healthLabelsTableView.dataSource = self
         dietLabelsTableView.delegate = self
         dietLabelsTableView.dataSource = self
-
+        
         setUI()
         setDoneButtonOnKcal()
         SearchSettingsDataManager.firstFill()
