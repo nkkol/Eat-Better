@@ -9,31 +9,40 @@
 import Foundation
 
 class SearchSettingsDataManager {
-    let apiClient = ApiClient()
-    //json them!
-    static var healthLabelsDetails = [
-        "Alcohol-free" : "No alcohol used or contained",
-        "Peanut-free" : "No peanuts or products containing peanuts",
-        "Sugar-conscious" : "Less than 4g of sugar per serving",
-        "Tree-Nut-free" : "No tree nuts or products containing tree nuts",
-        "Vegan" : "No meat, poultry, fish, dairy, eggs or honey",
-        "Vegetarian" : "No meat, poultry, or fish"
-    ]
+    static let apiClient = ApiClient()
+    static var healthLabelsDetails = { () -> [String : String] in
+        var dictionary = [String : String]()
+        let labelsArray = apiClient.fetchLabelsFromMock(isHealth: true)
+        labelsArray.labels.forEach { item in
+            dictionary[item.label] = item.description
+        }
+        return dictionary
+    }()
     
     static var sortedHealthLabelsDetails = {
         healthLabelsDetails.sorted(by: <)
     }
     
-    static var dietLabelsDetails =  [
-           "Balanced" : "Protein/Fat/Carb values in 15/35/50 ratio",
-           "High-Protein" : "More than 50% of total calories from proteins",
-           "Low-Carb" : "Less than 20% of total calories from carbs",
-           "Low-Fat" : "Less than 15% of total calories from fat",
-       ]
+    static var dietLabelsDetails = { () -> [String : String] in
+        var dictionary = [String : String]()
+        let labelsArray = apiClient.fetchLabelsFromMock(isHealth: false)
+        labelsArray.labels.forEach { item in
+            dictionary[item.label] = item.description
+        }
+        return dictionary
+    }()
     
     static var sortedDietLabelsDetails = {
         dietLabelsDetails.sorted(by: <)
     }
+    
+    static var dietLabels: () = {
+        let labelsArray = apiClient.fetchLabelsFromMock(isHealth: false)
+        labelsArray.labels.forEach { item in
+            dietLabelsDetails[item.label] = item.description
+        }
+        return
+    }()
     
     static var selectedHealthLabels = [String:Bool]()
     static var selectedDietLabels = [String:Bool]()

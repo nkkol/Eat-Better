@@ -31,22 +31,19 @@ struct ApiClient {
     
     mutating func fetchAnalysis (_ json: Data, completion: @escaping (Analysis) -> Void) {
       let gotAnalysis = try? JSONDecoder().decode(Analysis.self, from: json)
-        print (gotAnalysis)
+        print (gotAnalysis as Any)
         //force
         completion(gotAnalysis!)
     }
     
-    func fetchDietLabelsFromMock() -> Labels {
-        guard let file = Bundle.main.path(forResource: "DietLabelsMock", ofType: "json"),
+    func fetchLabelsFromMock(isHealth : Bool) -> Labels {
+        guard let file = Bundle.main.path(forResource: isHealth ? "HealthLabelsMock" : "DietLabelsMock", ofType: "json"),
         let data = try? Data(contentsOf: URL (fileURLWithPath: file), options: []),
             let labels = try? JSONDecoder().decode(Labels.self, from: data)
-            else {return [] as! Labels}
+            else {return [:] as! Labels}
             print(labels)
         return labels
     }
-    
-    func fetchHealthLabelsFromMock() {
-        
-    }
+
  
 }

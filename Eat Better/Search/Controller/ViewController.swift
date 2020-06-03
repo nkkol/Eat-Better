@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
         prepareForLoading()
         setDoneButton()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,0 +1,16 @@
+{
+"labels": [
+{"label":"Alcohol-free",
+"description" : "No alcohol used or contained"},
+{"label":"Peanut-free",
+"description" : "No peanuts or products containing peanuts"},
+{"label" : "Sugar-conscious",
+"description" : "Less than 4g of sugar per serving"},
+{"label" : "Tree-Nut-free",
+"description" : "No tree nuts or products containing tree nuts"},
+{"label" : "Vegan",
+"description" : "No meat, poultry, fish, dairy, eggs or honey"},
+{"label" : "Vegetarian",
+"description" : "No meat, poultry, or fish"}
+]
+}
